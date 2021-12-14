@@ -1,12 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>TOP Rock Paper Scissors</title>
-	</head>
-	<body>
-		<script src="./js/script.js"></script>
-	</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./css/styles.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <title>TOP Rock Paper Scissors</title>
+    </head>
+    <body>
+            <div class="stack">
+                <div class="header"><h1>Rock Paper Scissors Game</h1></div>
+                <div class="stack--horizontal">
+                    <div class="card">
+                        <div class="card__aside">
+                            <div class="card__figure">
+                                <input type="image" id="playerRockBtn" alt="rock" src="./images/Rock.svg">
+                                <input type="image" id="playerPaperBtn" alt="paper" src="./images/Paper.svg">
+                                <input type="image" id="playerScissorsBtn" alt="scissors" src="./images/Scissors.svg">
+                            </div>
+                        </div>
+                        <div class="card__header">
+                            <div class="card__title"><h3>Player</h1></div>
+                            <div class="player__score"><h2>0</h2></div>
+                        </div>
+                    </div>
+                    <div class="spacer">
+                        <div class="spacer__aside">
+                            <div class="spacer__figure">
+                            </div>
+                        </div>
+                        <div class="spacer__header">
+                            <div class="spacer__title"><h3>VS</h1></div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card__aside">
+                            <div class="card__figure">
+                                <input type="image" id="cpuRockBtn" alt="rock" src="./images/Rock.svg">
+                                <input type="image" id="cpuPaperBtn" alt="paper" src="./images/Paper.svg">
+                                <input type="image" id="cpuScissorsBtn" alt="scissors" src="./images/Scissors.svg">
+                            </div>
+                        </div>
+                        <div class="card__header">
+                            <div class="card__title"><h3>Computer</h1></div>
+                                <div class="cpu__score"><h2>0</h2></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="game__message">Message</div>
+                <div class="footer">
+                    <p>COPYRIGHT ©
+                        <script>
+                        document.write(new Date().getFullYear())
+                        </script>
+                        ERIC YANTIS
+                        </p>
+                        <a href="https://github.com/EYantis1212" target="_blank">GitGub
+                        </a>
+                </div>
+            </div>
+
+
+        <script src="./js/script.js"></script>
+    </body>
 </html>
