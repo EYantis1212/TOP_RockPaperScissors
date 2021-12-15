@@ -6,31 +6,42 @@ let playerScore = 0;
 let computerScore = 0;
 
 // COMPUTER GUESS
-const guess = ["rock", "paper", "scissors"];
+const guess = ["Rock", "Paper", "Scissors"];
 function computerPlay() {
-    return Math.floor(Math.random() * guess.length);
+    return guess[Math.floor(Math.random() * 3)];
 }
-let computerSelection = guess[computerPlay()];
 
-// PLAYER GUESS
-let playerSelection = "";
+// ROUND LOGIC//////////////
 
-// ROUND MESSAGES
-const playerLose = `${computerSelection} beats ${playerSelection}, YOU LOSE!`;
-const playerWin = `${playerSelection} beats ${computerSelection}, YOU WIN!`;
-const tie = `${playerSelection} and ${computerSelection} are equal...TIE!`;
-
-// ROUND LOGIC
+//Start Round
+function startRound(playerSelect) {
+    let playerSelection = playerSelect;
+    let computerSelection = computerPlay();
+    console.log(playerSelection);
+    console.log(computerSelection);
+    playRound(playerSelection, computerSelection);
+    pScore.textContent = playerScore;
+    cScore.textContent = computerScore;
+}
 function playRound(playerSelection, computerSelection) {
-    if (playerSelection === "rock" && computerSelection == "scissors") {
-        return console.log(playerWin);
-    } else if (playerSelection == "scissors" && computerSelection == "paper") {
-        return console.log(playerWin);
-    } else if (playerSelection == "paper" && computerSelection == "rock") {
-        return console.log(playerWin);
-    } else if (playerSelection == computerSelection) {
-        return console.log(tie);
-    } else return console.log(playerLose);
+    //Player Wins
+    if (
+        (playerSelection === "Rock" && computerSelection === "Scissors") ||
+        (playerSelection === "Scissors" && computerSelection === "Paper") ||
+        (playerSelection === "Paper" && computerSelection === "Rock")
+    ) {
+        gameMessage.textContent = `You Win: ${playerSelection} beats ${computerSelection}`;
+        playerScore++;
+    }
+    //Tie
+    else if (playerSelection === computerSelection) {
+        gameMessage.textContent = `You Tie: ${playerSelection} and ${computerSelection} are equal...`;
+
+        //Lose
+    } else {
+        gameMessage.textContent = `You Lose: ${computerSelection} beats ${playerSelection}`;
+        computerScore++;
+    }
 }
 // // 7. Create Game Reset
 
@@ -54,17 +65,11 @@ const playerScissorsBtn = document.getElementById("playerScissorsBtn");
 const cpuRockBtn = document.getElementById("cpuRockBtn");
 const cpuPaperBtn = document.getElementById("cpuPaperBtn");
 const cpuScissorsBtn = document.getElementById("cpuScissorsBtn");
-const pScore = document.getElementsByClassName("player__score");
-const cScore = document.getElementsByClassName("cpu__score");
-const gameMessage = document.getElementsByClassName("game__message");
+const pScore = document.getElementById("player__score");
+const cScore = document.getElementById("cpu__score");
+const gameMessage = document.getElementById("game__message");
 
 // UI EVENT LISTENERS
-playerRockBtn.addEventListener("click", function () {
-    playerSelection = "rock";
-});
-playerPaperBtn.addEventListener("click", function () {
-    playerSelection = "paper";
-});
-playerScissorsBtn.addEventListener("click", function () {
-    playerSelection = "scissors";
-});
+playerRockBtn.addEventListener("click", () => startRound("Rock"));
+playerPaperBtn.addEventListener("click", () => startRound("Paper"));
+playerScissorsBtn.addEventListener("click", () => startRound("Scissors"));

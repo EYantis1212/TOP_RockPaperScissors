@@ -50,18 +50,17 @@ h1 {
     box-shadow: 0 6.4px 14.4px 0 rgb(0 0 0 / 13%),
         0 1.2px 3.6px 0 rgb(0 0 0 / 11%);
     height: 40vh;
-    min-width: 0;
-    flex: 1 1 0;
+    width: 30vw;
     font-size: 2em;
 }
 .card__header {
     display: flex;
-    justify-content: space-around;
+    padding: 0.5em;
     gap: 2em;
     align-items: center;
 }
 .card__figure {
-    display: flex;
+    margin-top: 2em;
     gap: 0.5em;
 }
 .spacer {
@@ -72,12 +71,11 @@ h1 {
     text-align: center;
     width: 10vw;
 }
-.game__message {
+#game__message {
     display: flex;
     font-size: 3em;
     justify-content: center;
     text-align: center;
-    background-color: #87a2b4;
 }
 .footer {
     bottom: 0;
@@ -89,8 +87,13 @@ h1 {
     width: 100%;
 }
 .btn {
+    border: 3px solid transparent;
     width: 15vmin;
     height: 15vmin;
+}
+.pbtn:hover {
+    border: 3px solid blue;
+    border-radius: 50%;
 }
 
 @media (max-width: 1000px) {
