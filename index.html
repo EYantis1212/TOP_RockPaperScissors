@@ -16,7 +16,11 @@
     <body>
             <div class="stack">
                 <div class="header"><h1>Rock Paper Scissors Game</h1></div>
-                <div class="stack--horizontal">
+                <div class="hidden" id="modal">
+                    <p id="win_message"></p>
+                    <input type="button" id="newgame" value="Play Again?">
+                </div>
+                <div class="stack--horizontal" id="main">
                     <div class="card">
                         <div class="card__aside">
                             <div class="card__figure">
@@ -53,7 +57,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="game__message">Message</div>
+                <div class='game__message' id="game__message"></div>
                 <div class="footer">
                     <p>COPYRIGHT ©
                         <script>
@@ -61,7 +65,7 @@
                         </script>
                         ERIC YANTIS
                         </p>
-                        <a href="https://github.com/EYantis1212" target="_blank">GitGub
+                        <a href="https://github.com/EYantis1212" target="_blank"><img src="./images/github.png" alt="">
                         </a>
                 </div>
             </div>
